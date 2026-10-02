@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ReceiptRelay turns receipt text into return, warranty, and next-step reminders without uploading personal data.">
+  <title>ReceiptRelay — keep the useful dates</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="ReceiptRelay home"><span class="brand-mark">↗</span><span>ReceiptRelay</span></a>
+      <span class="privacy-pill"><span class="dot"></span> private by default</span>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="eyebrow">A calmer way to keep receipts useful</div>
+      <h1>Don’t lose the date<br><em>that saves you money.</em></h1>
+      <p class="hero-copy">Paste a receipt. ReceiptRelay finds the return window, warranty clue, and next action — right in your browser.</p>
+      <div class="hero-meta"><span>1 small task</span><span>•</span><span>0 uploads</span><span>•</span><span>made for real life</span></div>
+    </section>
+
+    <section class="workspace" aria-label="Receipt workspace">
+      <div class="input-card card">
+        <div class="card-head"><div><span class="step">01</span><h2>Drop in a receipt</h2></div><span class="tiny-label">text stays on this device</span></div>
+        <label for="receiptText" class="sr-only">Receipt text</label>
+        <textarea id="receiptText" placeholder="Paste the text from a receipt here…&#10;&#10;Example:&#10;MOSS &amp; MINT&#10;Canvas Daypack  $68.00&#10;Purchased 09/22/2026&#10;Returns accepted within 30 days&#10;Warranty: 1 year"></textarea>
+        <div class="input-actions"><button class="ghost-btn" id="sampleBtn" type="button">Try a sample</button><button class="primary-btn" id="analyzeBtn" type="button">Find my dates <span>→</span></button></div>
+      </div>
+
+      <div class="results-column" id="results" aria-live="polite">
+        <div class="empty-state card" id="emptyState"><div class="empty-icon">⌁</div><h2>Your useful dates will land here</h2><p>We’ll turn messy receipt text into a short, practical follow-up list.</p></div>
+        <div class="result-card card hidden" id="resultCard">
+          <div class="card-head"><div><span class="step">02</span><h2>Here’s what matters</h2></div><span class="status-badge"><span class="dot"></span> scanned locally</span></div>
+          <div class="receipt-summary"><div><span class="muted-label">MERCHANT</span><strong id="merchant">—</strong></div><div><span class="muted-label">TOTAL</span><strong id="total">—</strong></div><div><span class="muted-label">PURCHASED</span><strong id="purchaseDate">—</strong></div></div>
+          <div class="deadline-list" id="deadlineList"></div>
+          <div class="confidence"><span>Pattern confidence</span><div class="confidence-bar"><span id="confidenceFill"></span></div><strong id="confidenceText">—</strong></div>
+          <button class="secondary-btn" id="resetBtn" type="button">Start another receipt</button>
+        </div>
+        <div class="how-card card"><div class="how-icon">✦</div><div><strong>Designed to be explained</strong><p>No mystery AI output: each date shows the text pattern that triggered it, so you can check the result before acting.</p></div></div>
+      </div>
+    </section>
+
+    <section class="principles"><div><span class="principle-no">01</span><strong>Local first</strong><p>Your receipt text never leaves this browser.</p></div><div><span class="principle-no">02</span><strong>One thing well</strong><p>Return and warranty dates, without the clutter.</p></div><div><span class="principle-no">03</span><strong>Human check</strong><p>Review the evidence before you make a claim.</p></div></section>
+    <footer><span>ReceiptRelay · proof of concept</span><span>Built for Build With AI: Basics · 2026</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
